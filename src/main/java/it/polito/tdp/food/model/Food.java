@@ -1,15 +1,30 @@
 package it.polito.tdp.food.model;
 
 public class Food {
+	public enum StatoPreparazione{
+		DA_PREPARARE,
+		IN_CORSO,
+		PREPARATO,
+	}
 	private Integer food_code;
 	private String display_name;
+	private StatoPreparazione prep;
 	
 	public Food(Integer food_code, String display_name) {
 		super();
 		this.food_code = food_code;
 		this.display_name = display_name;
+		this.setPrep(StatoPreparazione.DA_PREPARARE);
 	}
 	
+	public StatoPreparazione getPrep() {
+		return prep;
+	}
+
+	public void setPrep(StatoPreparazione prep) {
+		this.prep = prep;
+	}
+
 	public Integer getFood_code() {
 		return food_code;
 	}
